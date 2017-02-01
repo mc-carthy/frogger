@@ -2,20 +2,27 @@
 
 public class FrogMovement : MonoBehaviour {
 
-    [SerializeField]
-    private Vector3 jumpForce;
     private Rigidbody rb;
+    private Camera cam;
+    private float jumpAngleDeg = 45;
+    private float jumpSpeed = 5;
 
     private void Awake ()
     {
         rb = GetComponent<Rigidbody> ();
+        cam = GetComponentInChildren<Camera> ();
     }
 
 	private void Update ()
     {
+        Vector3 cameraForwardVector = Vector3.ProjectOnPlane (cam.transform.forward, Vector3.up).normalized;
+        Debug.DrawRay (transform.position, cameraForwardVector, Color.blue);
+        float jumpAngleRad = jumpAngleDeg * Mathf.Deg2Rad;
+        Vector3 jumpVector = Vector3.RotateTowards (cameraForwardVector, Vector3.up, jumpAngleRad, 0);
+        jumpVector *= jumpSpeed;
         if (Input.GetKeyDown (KeyCode.Space))
         {
-            rb.AddForce (jumpForce, ForceMode.VelocityChange);
+            rb.AddForce (jumpVector, ForceMode.VelocityChange);
         }
     }
 
