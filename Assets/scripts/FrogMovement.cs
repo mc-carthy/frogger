@@ -16,11 +16,10 @@ public class FrogMovement : MonoBehaviour {
 	private void Update ()
     {
         Vector3 cameraForwardVector = Vector3.ProjectOnPlane (cam.transform.forward, Vector3.up).normalized;
-        Debug.DrawRay (transform.position, cameraForwardVector, Color.blue);
         float jumpAngleRad = jumpAngleDeg * Mathf.Deg2Rad;
         Vector3 jumpVector = Vector3.RotateTowards (cameraForwardVector, Vector3.up, jumpAngleRad, 0);
         jumpVector *= jumpSpeed;
-        if (Input.GetKeyDown (KeyCode.Space))
+        if (Input.GetKeyDown (KeyCode.Space) || GvrViewer.Instance.Triggered)
         {
             rb.AddForce (jumpVector, ForceMode.VelocityChange);
         }
