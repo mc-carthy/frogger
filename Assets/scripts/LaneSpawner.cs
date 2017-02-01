@@ -6,7 +6,7 @@ public class LaneSpawner : MonoBehaviour {
     private GameObject[] lanePrefabs;
 
     private int numStartLanes = 20;
-    private int laneWidth = 10;
+    private int laneWidth = 1000;
 
     private void Start ()
     {

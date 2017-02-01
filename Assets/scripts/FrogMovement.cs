@@ -8,9 +8,9 @@ public class FrogMovement : MonoBehaviour {
     private CapsuleCollider col;
     private Camera cam;
     private float jumpAngleDeg = 45;
-    private float jumpSpeed = 5;
+    private float jumpSpeed = 700;
     private float colHeight;
-    private float colSkinWidth = 0.25f;
+    private float colSkinWidth = 7.5f;
     private float groundedRayLength;
     private float maxVelocity = 5;
 
@@ -30,6 +30,7 @@ public class FrogMovement : MonoBehaviour {
 	private void Update ()
     {
         bool isGrounded = Physics.Raycast (transform.position, -transform.up, groundedRayLength);
+        Debug.DrawRay (transform.position, Vector3.down * groundedRayLength, Color.red);
         if ((
             Input.GetKeyDown (KeyCode.Space) || GvrViewer.Instance.Triggered) && 
             isGrounded &&
