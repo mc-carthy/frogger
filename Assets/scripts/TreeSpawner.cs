@@ -5,12 +5,13 @@ public class TreeSpawner : MonoBehaviour {
 	[SerializeField]
     private GameObject treePrefab;
 
-    private int maxTrees = 3;
+    private int minTrees = 3;
+    private int maxTrees = 15;
 
     private void Start ()
     {
-        int numTrees = Random.Range (0, maxTrees);
-        for (int i = 0; i < maxTrees; i++)
+        int numTrees = Random.Range (minTrees, maxTrees);
+        for (int i = 0; i < numTrees; i++)
         {
             CreateTree ();
         }

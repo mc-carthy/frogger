@@ -5,14 +5,17 @@ public class LaneSpawner : MonoBehaviour {
     [SerializeField]
     private GameObject[] lanePrefabs;
 
+    private int numStartLanes = 20;
+    private int laneWidth = 10;
 
     private void Start ()
     {
-        CreateRandomLane (0);
-        CreateRandomLane (10);
-        CreateRandomLane (20);
-        CreateRandomLane (30);
-        CreateRandomLane (40);
+        int offset = 0;
+        while (offset < numStartLanes * laneWidth)
+        {
+            CreateRandomLane (offset);
+            offset += laneWidth;
+        }
     }
 
     private void CreateRandomLane (float offset)
