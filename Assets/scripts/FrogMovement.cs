@@ -8,12 +8,12 @@ public class FrogMovement : MonoBehaviour {
     private CapsuleCollider col;
     private Camera cam;
     private float jumpAngleDeg = 45;
-    private float jumpSpeed = 700;
+    private float[] jumpSpeed = { 200, 350, 500 };
     private float colHeight;
     private float colSkinWidth = 7.5f;
     private float groundedRayLength;
-    private float maxVelocity = 5;
     private int collisionCount;
+    private int hopCount;
 
     private void Awake ()
     {
@@ -31,9 +31,13 @@ public class FrogMovement : MonoBehaviour {
 	private void Update ()
     {
         bool isGrounded = collisionCount > 0;
+        if (isGrounded)
+        {
+            hopCount = 0;
+        }
         if ((
             Input.GetKeyDown (KeyCode.Space) || GvrViewer.Instance.Triggered) && 
-            isGrounded
+            hopCount < jumpSpeed.Length
             )
         {
             Jump ();
@@ -55,8 +59,9 @@ public class FrogMovement : MonoBehaviour {
         Vector3 cameraForwardVector = Vector3.ProjectOnPlane (cam.transform.forward, Vector3.up).normalized;
         float jumpAngleRad = jumpAngleDeg * Mathf.Deg2Rad;
         Vector3 jumpVector = Vector3.RotateTowards (cameraForwardVector, Vector3.up, jumpAngleRad, 0);
-        jumpVector *= jumpSpeed;
+        jumpVector *= jumpSpeed[hopCount];
         rb.AddForce (jumpVector, ForceMode.VelocityChange);
+        hopCount++;
     }
 
 }
