@@ -1,12 +1,19 @@
 ﻿using UnityEngine;
 
+[RequireComponent (typeof (Rigidbody))]
 public class VehicleMovement : MonoBehaviour {
 
-    float speed = 1000;
+    private Rigidbody rb;
+    private float speed = 1000;
 
-    private void Update ()
+    private void Awake ()
     {
-        transform.Translate (-speed * Time.deltaTime, 0, 0);
+        rb = GetComponent<Rigidbody> ();
+    }
+
+    private void FixedUpdate ()
+    {
+        rb.MovePosition (transform.position + new Vector3 (-speed * Time.fixedDeltaTime, 0, 0));
     }
 
 }
