@@ -5,9 +5,8 @@ public class VehicleSpawner : MonoBehaviour {
     [SerializeField]
     private GameObject prefab;
 
+    private float spawnIntervalMean = 8f;
     private float spawnIntervalMin = 2f;
-    private float spawnIntervalMax = 5f;
-    private float spawnInterval;
 	private float nextSpawnTime = 0f;
 
     private void Start ()
@@ -31,8 +30,7 @@ public class VehicleSpawner : MonoBehaviour {
 
     private void SetNewSpawnTime ()
     {
-        spawnInterval = Random.Range (spawnIntervalMin, spawnIntervalMax);
-        nextSpawnTime = Time.time + spawnInterval;
+        nextSpawnTime = Time.time + -Mathf.Log (Random.value) * spawnIntervalMean + nextSpawnTime;
     }
 
 }
