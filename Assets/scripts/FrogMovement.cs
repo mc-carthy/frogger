@@ -13,6 +13,7 @@ public class FrogMovement : MonoBehaviour {
     private float colSkinWidth = 7.5f;
     private float groundedRayLength;
     private float maxVelocity = 5;
+    private int collisionCount;
 
     private void Awake ()
     {
@@ -29,19 +30,33 @@ public class FrogMovement : MonoBehaviour {
 
 	private void Update ()
     {
-        bool isGrounded = Physics.Raycast (transform.position, -transform.up, groundedRayLength);
-        Debug.DrawRay (transform.position, Vector3.down * groundedRayLength, Color.red);
+        bool isGrounded = collisionCount > 0;
         if ((
             Input.GetKeyDown (KeyCode.Space) || GvrViewer.Instance.Triggered) && 
-            isGrounded &&
-            rb.velocity.magnitude < maxVelocity)
+            isGrounded
+            )
         {
-            Vector3 cameraForwardVector = Vector3.ProjectOnPlane (cam.transform.forward, Vector3.up).normalized;
-            float jumpAngleRad = jumpAngleDeg * Mathf.Deg2Rad;
-            Vector3 jumpVector = Vector3.RotateTowards (cameraForwardVector, Vector3.up, jumpAngleRad, 0);
-            jumpVector *= jumpSpeed;
-            rb.AddForce (jumpVector, ForceMode.VelocityChange);
+            Jump ();
         }
+    }
+
+    private void OnCollisionEnter (Collision other)
+    {
+        collisionCount++;
+    }
+
+    private void OnCollisionExit (Collision other)
+    {
+        collisionCount--;
+    }
+
+    private void Jump ()
+    {
+        Vector3 cameraForwardVector = Vector3.ProjectOnPlane (cam.transform.forward, Vector3.up).normalized;
+        float jumpAngleRad = jumpAngleDeg * Mathf.Deg2Rad;
+        Vector3 jumpVector = Vector3.RotateTowards (cameraForwardVector, Vector3.up, jumpAngleRad, 0);
+        jumpVector *= jumpSpeed;
+        rb.AddForce (jumpVector, ForceMode.VelocityChange);
     }
 
 }
