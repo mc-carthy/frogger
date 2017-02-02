@@ -21,8 +21,8 @@ public class TreeSpawner : MonoBehaviour {
     {
         GameObject tree = Instantiate (treePrefab) as GameObject;
         tree.transform.parent = transform;
-        float randX = Random.Range (-40f, 40f);
-        float randZ = Random.Range (-5f, 5f);
+        float randX = Random.Range (-4000f, 4000f);
+        float randZ = Random.Range (-500f, 500f);
         tree.transform.localPosition = new Vector3 (randX, 0, randZ);
     }
 

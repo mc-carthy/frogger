@@ -120,8 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lanePrefabs:
   - {fileID: 1825592490309432, guid: d23026ccc652345b5a8ccdd473d272dd, type: 2}
-  - {fileID: 1005241565313910, guid: 57ff7b98dd94c431f931df7139b9fa99, type: 2}
-  - {fileID: 1677533397566588, guid: 83f468e6548fa4cf89a7dd2204ebbca9, type: 2}
+  - {fileID: 1591168631623270, guid: da685aace260b4f9bbdfe4d4fb96435b, type: 2}
 --- !u!4 &291313927
 Transform:
   m_ObjectHideFlags: 0
@@ -169,7 +168,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.5
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -310,7 +309,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1397720095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 50, z: 0}
+  m_LocalPosition: {x: 0, y: 500, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1371857219}
