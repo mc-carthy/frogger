@@ -6,6 +6,8 @@ public class FrogMovement : MonoBehaviour {
 
     [SerializeField]
     private GameObject uiCanvas;
+    [SerializeField]
+    private GameObject uiReticule;
 
     private Rigidbody rb;
     private CapsuleCollider col;
@@ -21,6 +23,7 @@ public class FrogMovement : MonoBehaviour {
     private void Awake ()
     {
         uiCanvas.SetActive (false);
+        uiReticule.SetActive (false);
         rb = GetComponent<Rigidbody> ();
         col = GetComponent<CapsuleCollider> ();
         cam = GetComponentInChildren<Camera> ();
@@ -75,7 +78,9 @@ public class FrogMovement : MonoBehaviour {
 
     private void Die ()
     {
+        rb.isKinematic = true;
         uiCanvas.SetActive (true);
+        uiReticule.SetActive (true);
     }
 
 }
