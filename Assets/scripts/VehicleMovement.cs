@@ -11,7 +11,6 @@ public class VehicleMovement : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody> ();
         xDir = Mathf.Cos (Mathf.Deg2Rad * transform.parent.rotation.eulerAngles.y);
-        Debug.Log (xDir);
     }
 
     private void FixedUpdate ()
