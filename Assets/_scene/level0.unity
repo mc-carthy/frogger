@@ -901,9 +901,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd0537fc930841b1a1b5fdf887160a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lanePrefabs:
-  - {fileID: 1322794734197482, guid: d23026ccc652345b5a8ccdd473d272dd, type: 2}
+  safeLanePrefabs:
   - {fileID: 1591168631623270, guid: da685aace260b4f9bbdfe4d4fb96435b, type: 2}
+  dangerLanePrefabs:
+  - {fileID: 1322794734197482, guid: d23026ccc652345b5a8ccdd473d272dd, type: 2}
   - {fileID: 1146323422131174, guid: 83f468e6548fa4cf89a7dd2204ebbca9, type: 2}
 --- !u!4 &291313927
 Transform:
