@@ -5,7 +5,7 @@ public class VehicleSpawner : MonoBehaviour {
     [SerializeField]
     private GameObject prefab;
 
-    private float spawnIntervalMean = 8f;
+    private float spawnIntervalMean = 3f;
     private float spawnIntervalMin = 2f;
 	private float nextSpawnTime = 0f;
 

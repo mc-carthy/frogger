@@ -260,7 +260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1366993928511592
 GameObject:
   m_ObjectHideFlags: 0
@@ -2101,15 +2101,15 @@ LODGroup:
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LODs:
-  - screenRelativeHeight: 0.25
+  - screenRelativeHeight: 0.75052685
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23566376162504620}
-  - screenRelativeHeight: 0.125
+  - screenRelativeHeight: 0.55343556
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23797256897941144}
-  - screenRelativeHeight: 0.0625
+  - screenRelativeHeight: 0.34701508
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23321564373823158}
@@ -2130,15 +2130,15 @@ LODGroup:
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LODs:
-  - screenRelativeHeight: 0.25
+  - screenRelativeHeight: 0.75052685
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23111752505275172}
-  - screenRelativeHeight: 0.125
+  - screenRelativeHeight: 0.55343556
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23783105598421928}
-  - screenRelativeHeight: 0.0625
+  - screenRelativeHeight: 0.34701508
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23238653121567700}
@@ -2159,15 +2159,15 @@ LODGroup:
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LODs:
-  - screenRelativeHeight: 0.25
+  - screenRelativeHeight: 0.75052685
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23606754687097418}
-  - screenRelativeHeight: 0.125
+  - screenRelativeHeight: 0.5480917
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23552805006376054}
-  - screenRelativeHeight: 0.0625
+  - screenRelativeHeight: 0.34701508
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23603997942734860}
@@ -2188,15 +2188,15 @@ LODGroup:
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LODs:
-  - screenRelativeHeight: 0.25
+  - screenRelativeHeight: 0.75052685
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23709587410383078}
-  - screenRelativeHeight: 0.125
+  - screenRelativeHeight: 0.5480917
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23472339077530702}
-  - screenRelativeHeight: 0.0625
+  - screenRelativeHeight: 0.34701508
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23260783716764616}

@@ -8,10 +8,11 @@ public class LaneSpawner : MonoBehaviour {
     private GameObject[] safeLanePrefabs;
     [SerializeField]
     private GameObject[] dangerLanePrefabs;
+    [SerializeField]
+    private int numStartLanes;
 
     private LaneType lastLaneType = LaneType.Safe;
     private float safeLaneProbability = 0.2f;
-    private int numStartLanes = 20;
     private int laneWidth = 1000;
 
     private void Start ()
