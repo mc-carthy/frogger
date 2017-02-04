@@ -4,6 +4,9 @@
 [RequireComponent (typeof (CapsuleCollider))]
 public class FrogMovement : MonoBehaviour {
 
+    [SerializeField]
+    private GameObject uiCanvas;
+
     private Rigidbody rb;
     private CapsuleCollider col;
     private Camera cam;
@@ -17,6 +20,7 @@ public class FrogMovement : MonoBehaviour {
 
     private void Awake ()
     {
+        uiCanvas.SetActive (false);
         rb = GetComponent<Rigidbody> ();
         col = GetComponent<CapsuleCollider> ();
         cam = GetComponentInChildren<Camera> ();
@@ -46,6 +50,11 @@ public class FrogMovement : MonoBehaviour {
 
     private void OnCollisionEnter (Collision other)
     {
+        if (other.collider.tag == "lethal")
+        {
+            Die ();
+            return;
+        }
         collisionCount++;
     }
 
@@ -62,6 +71,11 @@ public class FrogMovement : MonoBehaviour {
         jumpVector *= jumpSpeed[hopCount];
         rb.AddForce (jumpVector, ForceMode.VelocityChange);
         hopCount++;
+    }
+
+    private void Die ()
+    {
+        uiCanvas.SetActive (true);
     }
 
 }
