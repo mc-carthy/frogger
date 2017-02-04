@@ -454,6 +454,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1150719236665618, guid: 70285714511394153a4dd337d83f0721, type: 2}
+  spawnIntervalMean: 2.5
+  spawnIntervalMin: 0.5
 --- !u!114 &114827474533805990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -466,6 +468,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1150719236665618, guid: 70285714511394153a4dd337d83f0721, type: 2}
+  spawnIntervalMean: 2.5
+  spawnIntervalMin: 0.5
 --- !u!114 &114855272494848222
 MonoBehaviour:
   m_ObjectHideFlags: 1

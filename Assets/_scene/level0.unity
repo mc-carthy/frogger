@@ -954,6 +954,7 @@ MonoBehaviour:
   - {fileID: 1322794734197482, guid: d23026ccc652345b5a8ccdd473d272dd, type: 2}
   - {fileID: 1146323422131174, guid: 83f468e6548fa4cf89a7dd2204ebbca9, type: 2}
   numStartLanes: 10
+  invisibleWall: {fileID: 1324274407}
 --- !u!4 &291313927
 Transform:
   m_ObjectHideFlags: 0
