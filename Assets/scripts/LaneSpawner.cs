@@ -10,6 +10,8 @@ public class LaneSpawner : MonoBehaviour {
     private GameObject[] dangerLanePrefabs;
     [SerializeField]
     private int numStartLanes;
+    [SerializeField]
+    private GameObject invisibleWall;
 
     private GameObject player;
     private LaneType lastLaneType = LaneType.Safe;
@@ -33,6 +35,7 @@ public class LaneSpawner : MonoBehaviour {
         {
             if (lane.transform.position.z + (numStartLanes * laneWidth) < player.transform.position.z)
             {
+                invisibleWall.transform.position = new Vector3 (0, 0, lane.transform.position.z + laneWidth);
                 Destroy (lane.gameObject);
             }
         }
