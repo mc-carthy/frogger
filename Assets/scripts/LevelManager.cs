@@ -20,4 +20,10 @@ public class LevelManager : MonoBehaviour {
         Application.Quit ();
     }
 
+    private void Start ()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
 }
