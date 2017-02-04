@@ -11,17 +11,30 @@ public class LaneSpawner : MonoBehaviour {
     [SerializeField]
     private int numStartLanes;
 
+    private GameObject player;
     private LaneType lastLaneType = LaneType.Safe;
     private float safeLaneProbability = 0.2f;
     private int laneWidth = 1000;
+    private int offset = 0;
 
-    private void Start ()
+    private void Awake ()
     {
-        int offset = 0;
-        while (offset < numStartLanes * laneWidth)
+        player = GameObject.FindGameObjectWithTag ("Player");
+    }
+
+    private void Update ()
+    {
+        while (offset < numStartLanes * laneWidth + player.transform.position.z)
         {
             CreateRandomLane (offset);
             offset += laneWidth;
+        }
+        foreach (Transform lane in transform)
+        {
+            if (lane.transform.position.z + (numStartLanes * laneWidth) < player.transform.position.z)
+            {
+                Destroy (lane.gameObject);
+            }
         }
     }
 
